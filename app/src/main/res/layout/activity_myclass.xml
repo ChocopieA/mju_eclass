@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.MyclassActivity">
+    tools:context=".MyclassActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/name" />
 
     <TextView
         android:id="@+id/myclasstext"
@@ -27,17 +39,24 @@
         android:id="@+id/classlisttext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
         android:text="> 강의실 목록"
         android:textColor="@color/black"
         android:textSize="15dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="132dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myclasstext" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="380dp"
         android:layout_height="400dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="176dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/classlisttext" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -46,36 +65,27 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
 
-    <ImageButton
-        android:id="@+id/homeButton"
-        android:layout_width="206.5dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/home" />
+    <TextView
+        android:id="@+id/notificationtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="80dp"
+        android:text="공지사항"
+        android:textColor="@color/black"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toEndOf="@+id/lecturereferencetext"
+        app:layout_constraintTop_toBottomOf="@+id/myclasstext" />
 
-    <ImageButton
-        android:id="@+id/bellButton"
-        android:layout_width="206.5dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/lecturereferencetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="10dp"
+        android:text="강의자료실"
+        android:textColor="@color/black"
+        android:textSize="11dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/notification" />
-
-    <ImageButton
-        android:id="@+id/titleButton"
-        android:layout_width="150dp"
-        android:layout_height="30dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/krname"
-        tools:layout_editor_absoluteX="130dp"
-        tools:layout_editor_absoluteY="16dp" />
-
+        app:layout_constraintTop_toBottomOf="@+id/myclasstext" />
 </androidx.constraintlayout.widget.ConstraintLayout>
